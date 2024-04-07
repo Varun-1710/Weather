@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather API</title>
+</head>
+<body>
+    
+    <div class="container1" style="background-color:lightblue;"> 
+        
+        
+        <div class="box">
+
+            <div class="box_child1">
+                <img src=<%=obj.url%> alt="">
+            </div>
+
+            <div class="box_child2">
+                
+                <%= Math.floor(obj.Weatherdata.main.temp) %>&#176 
+                <p style="text-transform: capitalize; font-size: small;  margin-bottom: 10vh;"><%= obj.Weatherdata.weather[0].description %></p>
+            </div>
+        </div>
+        <table>
+            
+
+            <tr>
+                <td class="key">
+                    Average
+                </td>
+    
+                <td class="value">
+                    <span>&uparrow; <%= obj.Weatherdata.main.temp_max %>&#176 C </span>
+                   
+                </td>
+
+                <td class="value" colspan="2">
+                    &darr;<%= obj.Weatherdata.main.temp_min %>&#176 C
+                </td>
+            </tr>
+
+            <tr>
+                <td class="key">
+                      Sunrise
+                </td>
+
+                
+                <td class="value" colspan="2">
+                    <%=obj.Weatherdata.sys.sunrise%>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="key">
+                      Sunset
+                </td>
+
+                
+                <td class="value" colspan="2">
+                    <%=obj.Weatherdata.sys.sunset%>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="key">
+                      Feels Like
+                </td>
+                
+                <td class="value" colspan="2">
+                    <%=obj.Weatherdata.main.feels_like%> &#176;
+                </td>
+            </tr>
+
+            <tr>
+                <td class="key" >
+                    <p class="fas fa-wind">Wind</p>
+                </td>
+                
+                
+                <td class="value" colspan="2">
+                    <%= obj.Weatherdata.wind.speed %> m/s
+                </td>
+            </tr>
+
+            <tr>
+                <td class="key">
+                    Humidity
+                </td>
+                
+                
+                <td class="value" colspan="2">
+                    <%= obj.Weatherdata.main.humidity %>%
+                </td>
+            </tr>
+
+            
+
+
+            
+            
+
+            
+        </table>
+        
+        
+        
+    </div>
+    
+    
+</body>
+</html>
